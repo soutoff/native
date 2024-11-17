@@ -8,9 +8,12 @@ export declare class CategoryController {
         createdAt: Date;
         updatedAt: Date;
         name: string;
+        _count: {
+            products: number;
+        };
         slug: string;
         image: string;
-        prodiucts: {
+        products: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -22,18 +25,18 @@ export declare class CategoryController {
             categoryId: string | null;
             userId: string | null;
         }[];
-        _count: {
-            prodiucts: number;
-        };
     }[]>;
     getById(id: string): Promise<{
         id: string;
         createdAt: Date;
         updatedAt: Date;
         name: string;
+        _count: {
+            products: number;
+        };
         slug: string;
         image: string;
-        prodiucts: {
+        products: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -45,18 +48,18 @@ export declare class CategoryController {
             categoryId: string | null;
             userId: string | null;
         }[];
-        _count: {
-            prodiucts: number;
-        };
     }>;
     getBySlug(slug: string): Promise<{
         id: string;
         createdAt: Date;
         updatedAt: Date;
         name: string;
+        _count: {
+            products: number;
+        };
         slug: string;
         image: string;
-        prodiucts: {
+        products: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -68,9 +71,6 @@ export declare class CategoryController {
             categoryId: string | null;
             userId: string | null;
         }[];
-        _count: {
-            prodiucts: number;
-        };
     }>;
     create(): Promise<{
         id: string;

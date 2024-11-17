@@ -1,0 +1,1 @@
+{"version":3,"file":"return-product.objecct.js","sourceRoot":"","sources":["../../src/product/return-product.objecct.ts"],"names":[],"mappings":";;;AACA,+EAA2E;AAE9D,QAAA,mBAAmB,GAAwB;IACtD,EAAE,EAAE,IAAI;IACR,IAAI,EAAE,IAAI;IACV,IAAI,EAAE,IAAI;IACV,WAAW,EAAE,IAAI;IACjB,KAAK,EAAE,IAAI;IACX,KAAK,EAAE,IAAI;IACX,SAAS,EAAE,IAAI;IACf,QAAQ,EAAE,EAAC,MAAM,EAAE,6CAAoB,EAAC;CACzC,CAAA"}

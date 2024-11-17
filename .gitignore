@@ -1,4 +1,6 @@
 # compiled output
+ishod.*
+/ishod
 /dist
 /node_modules
 */node_modules
