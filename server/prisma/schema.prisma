@@ -48,7 +48,7 @@ model Category {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt() @map("updeted_at")
 
-  name  String @unique()
+  name  String
   slug  String @unique()
   image String
 
