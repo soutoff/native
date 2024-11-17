@@ -44,6 +44,29 @@ let AuthService = class AuthService {
             ...tokens
         };
     }
+    async login(dto) {
+        const user = await this.validateUser(dto);
+        const tokens = await this.issueTokens(user.id);
+        return {
+            user: this.returnUserFields(user),
+            ...tokens
+        };
+    }
+    async getNewTokens(refreshToken) {
+        const result = await this.jwt.verifyAsync(refreshToken);
+        if (!result)
+            throw new common_1.UnauthorizedException('Не валидный rerfresh токен');
+        const user = await this.prisma.user.findUnique({
+            where: {
+                id: result.id
+            }
+        });
+        const tokens = await this.issueTokens(user.id);
+        return {
+            user: this.returnUserFields(user),
+            ...tokens
+        };
+    }
     async issueTokens(userId) {
         const data = { id: userId };
         const accessToken = this.jwt.sign(data, {
@@ -62,6 +85,19 @@ let AuthService = class AuthService {
             id: user.id,
             email: user.email
         };
+    }
+    async validateUser(dto) {
+        const user = await this.prisma.user.findUnique({
+            where: {
+                email: dto.email
+            }
+        });
+        if (!user)
+            throw new common_1.NotFoundException('User not found');
+        const isValid = await (0, argon2_1.verify)(user.password, dto.password);
+        if (!isValid)
+            throw new common_1.UnauthorizedException('Invalid password');
+        return user;
     }
 };
 exports.AuthService = AuthService;

@@ -13,6 +13,23 @@ export declare class AuthService {
             email: string;
         };
     }>;
+    login(dto: AuthDto): Promise<{
+        accessToken: string;
+        refreshToken: string;
+        user: {
+            id: string;
+            email: string;
+        };
+    }>;
+    getNewTokens(refreshToken: string): Promise<{
+        accessToken: string;
+        refreshToken: string;
+        user: {
+            id: string;
+            email: string;
+        };
+    }>;
     private issueTokens;
     private returnUserFields;
+    private validateUser;
 }
