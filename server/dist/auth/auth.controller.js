@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const auth_dto_1 = require("./dto/auth.dto");
 const refresh_token_dto_1 = require("./dto/refresh-token.dto");
+const auth_decorator_1 = require("./decorators/auth.decorator");
 let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
@@ -53,6 +54,7 @@ __decorate([
 __decorate([
     (0, common_1.UsePipes)(new common_1.ValidationPipe()),
     (0, common_1.HttpCode)(200),
+    (0, auth_decorator_1.Auth)(),
     (0, common_1.Post)('login/access-token'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
