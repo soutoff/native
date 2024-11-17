@@ -1,16 +1,18 @@
 import { AuthDto } from './dto/auth.dto';
 import { PrismaService } from 'src/prisma.service';
+import { JwtService } from '@nestjs/jwt';
 export declare class AuthService {
     private prisma;
-    constructor(prisma: PrismaService);
+    private jwt;
+    constructor(prisma: PrismaService, jwt: JwtService);
     register(dto: AuthDto): Promise<{
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
-        email: string;
-        password: string;
-        name: string;
-        avatarPath: string;
-        phone: string;
+        accessToken: string;
+        refreshToken: string;
+        user: {
+            id: string;
+            email: string;
+        };
     }>;
+    private issueTokens;
+    private returnUserFields;
 }
