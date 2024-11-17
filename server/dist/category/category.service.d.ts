@@ -8,9 +8,6 @@ export declare class CategoryService {
         createdAt: Date;
         updatedAt: Date;
         name: string;
-        _count: {
-            products: number;
-        };
         slug: string;
         image: string;
         products: {
@@ -25,15 +22,15 @@ export declare class CategoryService {
             categoryId: string | null;
             userId: string | null;
         }[];
+        _count: {
+            products: number;
+        };
     }[]>;
     byId(id: string): Promise<{
         id: string;
         createdAt: Date;
         updatedAt: Date;
         name: string;
-        _count: {
-            products: number;
-        };
         slug: string;
         image: string;
         products: {
@@ -48,15 +45,15 @@ export declare class CategoryService {
             categoryId: string | null;
             userId: string | null;
         }[];
+        _count: {
+            products: number;
+        };
     }>;
     bySlug(slug: string): Promise<{
         id: string;
         createdAt: Date;
         updatedAt: Date;
         name: string;
-        _count: {
-            products: number;
-        };
         slug: string;
         image: string;
         products: {
@@ -71,6 +68,9 @@ export declare class CategoryService {
             categoryId: string | null;
             userId: string | null;
         }[];
+        _count: {
+            products: number;
+        };
     }>;
     create(): Promise<{
         id: string;
