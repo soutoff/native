@@ -1,11 +1,9 @@
 import { FC } from 'react'
 import { Text, View } from 'react-native'
 
-import '../../../../global.css'
-
 const Home: FC = () => {
 	return (
-		<View className=''>
+		<View>
 			<Text>Home</Text>
 		</View>
 	)
